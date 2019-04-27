@@ -20,11 +20,6 @@ public class AnimalsTest {
        Animals testAnimal = new Animals("Cheetahs");
        assertEquals("Cheetahs", testAnimal.getName());
    }
-//   @Test
-//    public void getId_InstantiatesCorrectly_int(){
-//       Animals testAnimal = new Animals("Cheetahs",1);
-//       assertEquals(1, testAnimal.getId());
-//   }
 
     @Test
     public void equals_returnsTrueIfNameIsSame_true() {
@@ -47,7 +42,14 @@ public class AnimalsTest {
        Animals secondAnimal = new Animals ("Cheetah");
        secondAnimal.save();
        assertEquals(true, Animals.all().get(0).equals(firstAnimal));
-       assertEquals(true, Animals.all().get(0).equals(secondAnimal));
+       assertEquals(true, Animals.all().get(1).equals(secondAnimal));
    }
+    @Test
+    public void save_assignsIdToObject() {
+        Animals testAnimal = new Animals ("Henry");
+        testAnimal.save();
+        Animals savedAnimal = Animals.all().get(0);
+        assertEquals(testAnimal.getId(), savedAnimal.getId());
+    }
 }
 
