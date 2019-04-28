@@ -1,6 +1,7 @@
 package WildlifeTracker;
-import org.sql2o.*;
 import org.junit.rules.ExternalResource;
+import org.sql2o.*;
+
 
 public class DatabaseRule extends ExternalResource {
     @Override
