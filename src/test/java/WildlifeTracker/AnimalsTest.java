@@ -4,6 +4,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.Arrays;
+import java.sql.Timestamp;
+import java.util.Date;
 import org.sql2o.*;
 
 public class AnimalsTest {
@@ -28,6 +30,18 @@ public class AnimalsTest {
         Animals anotherAnimal = new Animals("Lion");
         assertTrue(firstAnimal.equals(anotherAnimal));
     }
+    @Test
+    public void getSightings_retrievesALlSightingsFromDatabase_sightingsList() {
+        Animals myAnimal = new Animals("Lion");
+        myAnimal.save();
+        Sightings firstSighting = new Sightings("John","By the river", myAnimal.getId());
+        firstSighting.save();
+        Sightings secondSighting = new Sightings("Peter","By the pond", myAnimal.getId());
+        secondSighting.save();
+        Sightings[] sightings = new Sightings[] { firstSighting, secondSighting };
+        assertTrue(myAnimal.getSightings().containsAll(Arrays.asList(sightings)));
+    }
+
 
 //   @Test
 //    public void save_InsertsObjectIntoDatabase_animal(){
