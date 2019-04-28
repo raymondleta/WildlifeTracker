@@ -3,6 +3,7 @@ package WildlifeTracker;
 import org.junit.Rule;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.util.Arrays;
 import org.sql2o.*;
 
 public class AnimalsTest {
