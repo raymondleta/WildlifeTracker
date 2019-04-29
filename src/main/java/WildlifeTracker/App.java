@@ -51,9 +51,17 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             model.put("animals", Animals.all());
             model.put("endangeredAnimals", EndangeredAnimal.all());
-            model.put("templates", "templates/animals.vtl");
+            model.put("template", "templates/animals.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
+
+        get("/sightings", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("animals", Animals.all());
+            model.put("endangeredAnimals", EndangeredAnimal.all());
+            model.put("template", "templates/sightings.vtl");
+            return new ModelAndView(model, layout)
+        })
 
 
 

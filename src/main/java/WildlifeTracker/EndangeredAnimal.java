@@ -33,6 +33,7 @@ public class EndangeredAnimal extends Animals {
         return age;
     }
 
+
     public static List<EndangeredAnimal> all() {
         String sql = "SELECT * FROM animals WHERE type='endangered';";
         try (Connection con = DB.sql2o.open()) {
