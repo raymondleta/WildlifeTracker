@@ -60,8 +60,8 @@ public class App {
             model.put("animals", Animals.all());
             model.put("endangeredAnimals", EndangeredAnimal.all());
             model.put("template", "templates/sightings.vtl");
-            return new ModelAndView(model, layout)
-        })
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
 
 
 

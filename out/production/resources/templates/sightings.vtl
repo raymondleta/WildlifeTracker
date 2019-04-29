@@ -1,0 +1,55 @@
+<h1>Animal Sighting</h1>
+<h3>Endangered Animal</h3>
+
+<form>
+    <label>Select Endangered Animal</label>
+    <select name="endangeredAnimalSelected">
+        #foreach($endangered_animal in $endangeredAnimals)
+        <option>$endangered_animal.getName()</option>
+        #end
+    </select>
+    <br>
+
+    <label>Select Animal Health</label>
+    <select>
+        <option>healthy</option>
+        <option>okay</option>
+        <option>ill</option>
+    </select>
+    <br>
+    <label>Select Animal Age</label>
+    <select>
+        <option>newborn</option>
+        <option>young</option>
+        <option>adult</option>
+    </select>
+    <br>
+    <label>Location</label>
+    <input type="location" id="location" name="location">
+    <br>
+    <label>Ranger Name</label>
+    <input type="ranger" id="ranger" name="ranger">
+    <br>
+    <button type="submit" class="btn">Add Sighting</button>
+
+</form>
+
+<!--<h3>Non-Endangered Animal</h3>-->
+
+<!--<form>-->
+<!--    <label>Select Animal</label>-->
+<!--    <select name="endangeredAnimalSelected">-->
+<!--        #foreach($animal in $animals)-->
+<!--        <option>$animal.getName()</option>-->
+<!--        #end-->
+<!--    </select>-->
+<!--    <br>-->
+<!--    <label>Location</label>-->
+<!--    <input type="location" id="location1" name="location">-->
+<!--    <br>-->
+<!--    <label>Ranger Name</label>-->
+<!--    <input type="ranger" id="ranger1" name="ranger">-->
+<!--    <br>-->
+<!--    <button type="submit" class="btn">Add Sighting</button>-->
+
+<!--</form>-->

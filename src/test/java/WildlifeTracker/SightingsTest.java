@@ -70,6 +70,7 @@ public class SightingsTest {
         Sightings secondSighting = new Sightings("Peter","By the mountain",1);
         secondSighting.save();
         assertEquals(Sightings.find(secondSighting.getId()), secondSighting);
+        assertEquals(Sightings.find(firstSighting.getId()), firstSighting);
     }
 
     @Test
