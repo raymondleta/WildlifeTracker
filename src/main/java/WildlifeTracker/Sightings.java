@@ -11,7 +11,7 @@ public class Sightings {
     public Sightings(String ranger, String location, int animalId) {
         this.ranger = ranger;
         this.location = location;
-        this.animalId =animalId;
+        this.animalId = animalId;
 
     }
 

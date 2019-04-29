@@ -1,0 +1,16 @@
+<h2>Endangered Animals</h2>
+#if(endangeredAnimal.size()==0)
+<a href = "/animal/new">Add animal</a>
+#else
+#foreach($endangeredAnimal1 in $endangeredAnimal)
+<h4>$endangeredAnimal1.getName()</h4>
+
+<h2>Non Endangered Animal</h2>
+#if(animals.size()==0)
+<a href="/animal/new">Add animal</a>
+#else
+#foreach($animal in $animals)
+<h4>$animal.getName()</h4>
+
+
+

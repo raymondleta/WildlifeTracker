@@ -54,15 +54,24 @@ public class Animals {
                     .executeAndFetch(Sightings.class);
         }
     }
-//    public static Animals find(int id){
-//        try(Connection con = DB.sql2o.open()){
-//            String sql = "SELECT * FROM animals where id=:id";
-//            Animals animal = con.createQuery(sql)
-//                    .addParameter("id", id)
-//                    .executeAndFetchFirst(Animals.class);
-//            return animal;
-//        }
-//    }
+    public static List<EndangeredAnimal> all() {
+        String sql = "SELECT * FROM animals";
+        try (Connection con = DB.sql2o.open()) {
+            return con.createQuery(sql)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetch(EndangeredAnimal.class);
+        }
+
+    }
+    public static Animals find(int id){
+        try(Connection con = DB.sql2o.open()){
+            String sql = "SELECT * FROM animals where id=:id";
+            Animals animal = con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Animals.class);
+            return animal;
+        }
+    }
 
 //    public Timestamp getSighting(){
 //        return sighting;
