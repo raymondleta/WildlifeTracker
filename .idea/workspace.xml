@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e74916c-376c-4137-a96f-59a417f05b31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/WildlifeTracker/Animals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WildlifeTracker/Animals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WildlifeTracker/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WildlifeTracker/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.vtl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.vtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.vtl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.vtl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -30,10 +29,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/WildlifeTracker/Animals.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="199">
               <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -42,6 +50,15 @@
                 <element signature="e#388#389#0" expanded="true" />
                 <element signature="e#413#414#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/endangeredAnimal.vtl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -70,16 +87,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/public/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+            <state relative-caret-position="419">
+              <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/WildlifeTracker/Sightings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1160">
+            <state relative-caret-position="-106">
               <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -123,7 +140,6 @@
         <option value="$PROJECT_DIR$/src/main/java/WildlifeTracker/DatabaseRule.java" />
         <option value="$PROJECT_DIR$/src/test/java/WildlifeTracker/EndangeredAnimalTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/WildlifeTracker/EndangeredAnimal.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl" />
         <option value="$PROJECT_DIR$/src/main/java/WildlifeTracker/NonEndengered.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/animals.vtl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/endangaredAnimal.vtl" />
@@ -134,9 +150,10 @@
         <option value="$PROJECT_DIR$/src/main/java/WildlifeTracker/Sightings.java" />
         <option value="$PROJECT_DIR$/src/main/java/WildlifeTracker/Animals.java" />
         <option value="$PROJECT_DIR$/src/main/java/WildlifeTracker/App.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/layout.vtl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.vtl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/layout.vtl" />
         <option value="$PROJECT_DIR$/src/main/resources/public/app.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl" />
       </list>
     </option>
   </component>
@@ -380,9 +397,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22103004" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22103004" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -391,13 +407,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.3313253" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.3313253" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.26987952" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" visible="true" weight="0.26987952" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007153" side_tool="true" weight="0.3313253" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.3299363" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32891566" />
@@ -524,13 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/animals.vtl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -575,20 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/endangeredAnimal.vtl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/layout.vtl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="80" selection-start-line="6" selection-start-column="80" selection-end-line="6" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.vtl">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -606,16 +601,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/WildlifeTracker/Animals.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="199">
           <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -624,6 +612,27 @@
             <element signature="e#388#389#0" expanded="true" />
             <element signature="e#413#414#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/endangeredAnimal.vtl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/layout.vtl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="85" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/public/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -639,11 +648,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/WildlifeTracker/Sightings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1160">
+        <state relative-caret-position="-106">
           <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
         </state>
       </provider>
     </entry>
