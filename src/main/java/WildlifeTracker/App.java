@@ -73,17 +73,19 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             String location = request.queryParams("location");
             String ranger = request.queryParams("ranger");
+            String health = request.queryParams("health");
+            String age = request.queryParams("age");
             int animalId = Integer.parseInt(request.queryParams("endangeredAnimalSelected"));
-            Sightings sighting = new Sightings(ranger, location, animalId);
+            Sightings sighting = new Sightings(ranger, location, animalId, health, age);
             sighting.save();
             model.put("sighting", sighting);
             model.put("animals", EndangeredAnimal.all());
 
             String animal = EndangeredAnimal.find(animalId).getName();
             model.put("animal", animal);
-            model.put("template", "templates/endangeredAnimal.vtl");
-            return new ModelAndView(model, layout);
-        },new VelocityTemplateEngine());
+            response.redirect("/");
+            return null;
+        });
 
         get("/endangeredAnimal/:id", (request, response) -> {
             Map<String, Object>model = new HashMap<>();

@@ -7,13 +7,21 @@ public class Sightings {
     private String location;
     private int id;
     private int animalId;
+    private String health;
+    private String age;
 
-    public Sightings(String ranger, String location, int animalId) {
+
+    public Sightings(String ranger, String location, int animalId, String health, String age) {
         this.ranger = ranger;
         this.location = location;
         this.animalId = animalId;
+        this.health = health;
+        this.age = age;
+
 
     }
+
+
 
     public String getRanger() {
         return ranger;
@@ -28,9 +36,16 @@ public class Sightings {
     public int getAnimalId() {
         return animalId;
     }
+    public String getHealth() {
+        return health;
+    }
+
+    public String getAge() {
+        return age;
+    }
 
     public static List<Sightings> all() {
-        String sql = "SELECT id, ranger, location, animalId FROM sightings";
+        String sql = "SELECT id, ranger, location, animalId, health, age FROM sightings";
         try(Connection con = DB.sql2o.open()) {
             return con.createQuery(sql).executeAndFetch(Sightings.class);
         }
@@ -44,17 +59,21 @@ public class Sightings {
             return this.getRanger().equals(newSighting.getRanger()) &&
                     this.getLocation().equals(newSighting.getLocation())&&
                     this.getId() == newSighting.getId()&&
-                    this.getAnimalId() == newSighting.getAnimalId();
+                    this.getAnimalId() == newSighting.getAnimalId()&&
+                    this.getHealth().equals(newSighting.getHealth())&&
+                    this.getAge().equals(newSighting.getAge());
         }
     }
 
     public void save() {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO sightings (ranger, location, animalId ) VALUES (:ranger, :location, :animalId)";
+            String sql = "INSERT INTO sightings (ranger, location, animalId, health, age ) VALUES (:ranger, :location, :animalId, :health, :age)";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("ranger", this.ranger)
                     .addParameter("location", this.location)
                     .addParameter("animalId", this.animalId)
+                    .addParameter("health", this.health)
+                    .addParameter("age", this.age)
                     .executeUpdate()
                     .getKey();
         }
