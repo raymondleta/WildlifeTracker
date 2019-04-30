@@ -1,4 +1,5 @@
 <h1>WildLife Tracker</h1>
+<img class ="gif" src="https://www.svgimages.com/svg-image/s6/giraffe-head-black-256x256.png">
 
 
 
@@ -18,7 +19,8 @@
     <a href = "/animals/new">Add animal</a>
 #else
     #foreach($endangeredAnimal in $endangeredAnimals)
-        <h4>$endangeredAnimal.getId() $endangeredAnimal.getName() <a href="/endangeredAnimals/$endangeredAnimal.getId()">Details</a></h4>
+        <h4>$endangeredAnimal.getId() $endangeredAnimal.getName()</h4>
+        <h5><a href="/endangeredAnimals/$endangeredAnimal.getId()">Details</a></h5>
     #end
 #end
 
