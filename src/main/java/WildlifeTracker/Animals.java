@@ -13,9 +13,6 @@ public class Animals {
     public String type;
 
     public Animals(String name) {
-        if(name.equals("")){
-            throw new IllegalArgumentException("Please enter name.");
-        }
         this.name = name;
         this.id = id;
     }

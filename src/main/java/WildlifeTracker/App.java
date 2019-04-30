@@ -78,6 +78,7 @@ public class App {
             int animalId = Integer.parseInt(request.queryParams("endangeredAnimalSelected"));
             Sightings sighting = new Sightings(ranger, location, animalId, health, age);
             sighting.save();
+
             model.put("sighting", sighting);
             model.put("animals", EndangeredAnimal.all());
 
