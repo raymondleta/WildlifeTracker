@@ -1,6 +1,8 @@
 package WildlifeTracker;
 import java.util.List;
 import org.sql2o.*;
+import java.sql.Timestamp;
+import java.text.DateFormat;
 
 public class Sightings {
     private String ranger;
@@ -9,6 +11,7 @@ public class Sightings {
     private int animalId;
     private String health;
     private String age;
+    private Timestamp sighting;
 
 
     public Sightings(String ranger, String location, int animalId, String health, String age) {
@@ -45,7 +48,7 @@ public class Sightings {
     }
 
     public static List<Sightings> all() {
-        String sql = "SELECT id, ranger, location, animalId, health, age FROM sightings";
+        String sql = "SELECT id, ranger, location, animalId, health, age, sighting FROM sightings";
         try(Connection con = DB.sql2o.open()) {
             return con.createQuery(sql).executeAndFetch(Sightings.class);
         }
@@ -65,9 +68,13 @@ public class Sightings {
         }
     }
 
+    public String getSighting() {
+        return DateFormat.getDateTimeInstance().format(sighting);
+    }
+
     public void save() {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO sightings (ranger, location, animalId, health, age ) VALUES (:ranger, :location, :animalId, :health, :age)";
+            String sql = "INSERT INTO sightings (ranger, location, animalId, health, age, sighting ) VALUES (:ranger, :location, :animalId, :health, :age, now())";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("ranger", this.ranger)
                     .addParameter("location", this.location)

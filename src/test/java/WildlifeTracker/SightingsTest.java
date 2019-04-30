@@ -2,6 +2,8 @@ package WildlifeTracker;
 
 import org.junit.Rule;
 import org.junit.Test;
+import java.sql.Timestamp;
+import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -81,6 +83,14 @@ public class SightingsTest {
         mySighting.save();
         Sightings savedSighting = Sightings.find(mySighting.getId());
         assertEquals(savedSighting.getAnimalId(), myAnimal.getId());
+    }
+    @Test
+    public void save_recordsTimeOfCreationInDatabase() {
+        Sightings testAnimal = new Sightings("John","Zone C",1,"Ill","young");
+        testAnimal.save();
+        Timestamp savedAnimalSighting = Sightings.find(testAnimal.getId()).getSighting();
+        Timestamp rightNow = new Timestamp(new Date().getTime());
+        assertEquals(rightNow.getDay(), savedAnimalSighting.getDay());
     }
 
 }
