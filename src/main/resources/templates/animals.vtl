@@ -18,7 +18,7 @@
     <a href = "/animals/new">Add animal</a>
 #else
     #foreach($endangeredAnimal in $endangeredAnimals)
-        <h4>$endangeredAnimal.getId() $endangeredAnimal.getName()</h4>
+        <h4>$endangeredAnimal.getId() $endangeredAnimal.getName() <a href="/endangeredAnimals/$endangeredAnimal.getId()">Details</a></h4>
     #end
 #end
 

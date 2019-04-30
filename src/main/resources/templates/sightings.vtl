@@ -1,29 +1,29 @@
 <h1>Animal Sighting</h1>
 <h3>Endangered Animal</h3>
 
-<form>
+<form action="/endangeredAnimals" method="post">
     <label>Select Endangered Animal</label>
     <select name="endangeredAnimalSelected">
-        #foreach($endangered_animal in $endangeredAnimals)
-        <option>$endangered_animal.getName()</option>
+        #foreach($endangeredAnimal in $endangeredAnimals)
+        <option value="$endangeredAnimal.getId()">$endangeredAnimal.getName()</option>
         #end
     </select>
     <br>
 
-    <label>Select Animal Health</label>
-    <select>
-        <option>healthy</option>
-        <option>okay</option>
-        <option>ill</option>
-    </select>
-    <br>
-    <label>Select Animal Age</label>
-    <select>
-        <option>newborn</option>
-        <option>young</option>
-        <option>adult</option>
-    </select>
-    <br>
+<!--    <label>Select Animal Health</label>-->
+<!--    <select name="health" id="health">-->
+<!--        <option>healthy</option>-->
+<!--        <option>okay</option>-->
+<!--        <option>ill</option>-->
+<!--    </select>-->
+<!--    <br>-->
+<!--    <label>Select Animal Age</label>-->
+<!--    <select id="age" name="age">-->
+<!--        <option>newborn</option>-->
+<!--        <option>young</option>-->
+<!--        <option>adult</option>-->
+<!--    </select>-->
+<!--    <br>-->
     <label>Location</label>
     <input type="location" id="location" name="location">
     <br>

@@ -7,8 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 import spark.template.velocity.VelocityTemplateEngine;
 
-import java.util.Map;
-
 import static spark.Spark.*;
 
 public class App {
@@ -60,6 +58,38 @@ public class App {
             model.put("animals", Animals.all());
             model.put("endangeredAnimals", EndangeredAnimal.all());
             model.put("template", "templates/sightings.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        get("/endangeredAnimals/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            EndangeredAnimal endangeredAnimal = EndangeredAnimal.find(Integer.parseInt(request.params(":id")));
+            model.put("endangeredAnimal", endangeredAnimal);
+            model.put("template", "templates/endangeredAnimal.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        post("/endangeredAnimals", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String location = request.queryParams("location");
+            String ranger = request.queryParams("ranger");
+            int animalId = Integer.parseInt(request.queryParams("endangeredAnimalSelected"));
+            Sightings sighting = new Sightings(ranger, location, animalId);
+            sighting.save();
+            model.put("sighting", sighting);
+            model.put("animals", EndangeredAnimal.all());
+
+            String animal = EndangeredAnimal.find(animalId).getName();
+            model.put("animal", animal);
+            model.put("template", "templates/endangeredAnimal.vtl");
+            return new ModelAndView(model, layout);
+        },new VelocityTemplateEngine());
+
+        get("/endangeredAnimal/:id", (request, response) -> {
+            Map<String, Object>model = new HashMap<>();
+            EndangeredAnimal endangeredAnimal = EndangeredAnimal.find(Integer.parseInt(request.params(":id")));
+            model.put("endangeredAnimal", endangeredAnimal);
+            model.put("template", "templates/endangeredAnimal.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
