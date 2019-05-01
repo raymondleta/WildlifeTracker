@@ -36,6 +36,9 @@ Thumbs.db
 ############
 build/
 .gradle/
+.gradle
+/build/
 *.log
 .idea/
 *.iml
+!gradle-wrapper.jar
