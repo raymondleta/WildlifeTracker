@@ -1,15 +1,23 @@
 <h1>$endangeredAnimal.getName()</h1>
+<img src="https://images.vexels.com/media/users/3/161046/isolated/lists/94301eb24a579caea2c63cc1df55288d-rhinoceros-rhino-horn-tail-fat-silhouette-detail.png">
+
 <h4>Animal ID: $endangeredAnimal.getId()</h4>
 
 #if($endangeredAnimal.getSightings().size() == 0)
 <p>Click here to report a sighting <a href="/sightings">Sightings</a>.</p>
 #else
     #foreach($sighting in $endangeredAnimal.getSightings())
-        Ranger: $sighting.getRanger()
-        Location: $sighting.getLocation()
-        Health: $sighting.getHealth()
-        Age: $sighting.getAge()
-        Time: $sighting.getSighting()
+
+        <Strong>Location:</Strong> $sighting.getLocation()
+            <br><br>
+        <strong>Health:</strong> $sighting.getHealth()
+            <br><br>
+        <strong>Age:</strong> $sighting.getAge()
+            <br><br>
+        <strong>Time:</strong> $sighting.getSighting()
+            <br><br>
+        <strong>Ranger:</strong> $sighting.getRanger()
+            <br>
 <br>
 <br>
 #end

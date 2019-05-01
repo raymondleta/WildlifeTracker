@@ -33,8 +33,35 @@ a {
     font-family: 'Fjalla One', sans-serif;
     font-size: 20px;
 }
-.gif{
-    width: 150px;
-    height: 150px;
+
+img{
+    width: 100px;
+    height: 100px;
+}
+.animals{
+    font-size: 20px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
 }
 

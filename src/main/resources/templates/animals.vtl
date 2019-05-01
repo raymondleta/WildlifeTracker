@@ -2,25 +2,26 @@
 <img class ="gif" src="https://www.svgimages.com/svg-image/s6/giraffe-head-black-256x256.png">
 
 
-
-<h2>All Animals</h2>
-#if($animals.size()==0)
-    <a href="/animals/new">Add animal</a>
-#else
-    #foreach($animal in $animals)
-        $animal.getId()
-        $animal.getName()
-<br>
+<div class="animals">
+    <h2>All Animals</h2>
+    #if($animals.size()==0)
+        <a href="/animals/new">Add animal</a>
+    #else
+        #foreach($animal in $animals)
+            $animal.getId()
+            $animal.getName()
+    <br>
+        #end
     #end
-#end
+</div>
 
 <h2>Endangered Animals</h2>
 #if($endangeredAnimals.size()==0)
     <a href = "/animals/new">Add animal</a>
 #else
     #foreach($endangeredAnimal in $endangeredAnimals)
-        <h4>$endangeredAnimal.getId() $endangeredAnimal.getName()</h4>
-        <h5><a href="/endangeredAnimals/$endangeredAnimal.getId()">Details</a></h5>
+        <h3> $endangeredAnimal.getName()</h3>
+        <p><a href="/endangeredAnimals/$endangeredAnimal.getId()">Sighting Details</a></p>
     #end
 #end
 
